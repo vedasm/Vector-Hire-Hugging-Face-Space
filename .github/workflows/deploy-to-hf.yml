@@ -25,7 +25,7 @@ jobs:
           # Copy only the files needed for deployment
           cp README.md Dockerfile requirements.txt app.py main.py "$tmp_dir/"
           mkdir -p "$tmp_dir/data"
-          cp data/job_description.md data/candidate_schema.json data/sample_candidates.json "$tmp_dir/data/"
+          cp data/job_description.md "$tmp_dir/data/"
           
           cd "$tmp_dir"
           git init -b main
