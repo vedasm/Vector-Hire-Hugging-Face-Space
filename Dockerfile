@@ -14,6 +14,7 @@ ENV SENTENCE_TRANSFORMERS_HOME=/app/models
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')"
 
 COPY app.py main.py ./
+COPY data/job_description.md ./data/
 
 # Create user AFTER model download, then grant read access
 RUN useradd -m -u 1000 appuser && chown -R appuser /app
