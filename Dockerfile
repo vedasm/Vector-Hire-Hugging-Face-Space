@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 ENV STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION=false
-ENV STREAMLIT_SERVER_MAX_UPLOAD_SIZE=200
+ENV STREAMLIT_SERVER_MAX_UPLOAD_SIZE=500
 
 # Download model to a fixed path readable by all users
 ENV SENTENCE_TRANSFORMERS_HOME=/app/models
