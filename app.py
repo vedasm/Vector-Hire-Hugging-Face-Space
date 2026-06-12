@@ -11,7 +11,7 @@ import streamlit as st
 def load_model():
     return SentenceTransformer(model_path)
 
-st.title("RedRob Candidate Ranker")
+st.title("Vector Hire Candidate Ranker")
 
 uploaded = st.file_uploader("Upload candidates (.jsonl or .json)", type=["jsonl", "json"])
 
