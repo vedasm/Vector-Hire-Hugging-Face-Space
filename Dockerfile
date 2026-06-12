@@ -2,7 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-RUN mkdir -p .streamlit data
+RUN mkdir -p data
+RUN mkdir -p /app/.streamlit
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && \
@@ -16,7 +17,7 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 
 COPY app.py main.py ./
 COPY data/ ./data/
-COPY .streamlit/config.toml ./.streamlit/
+COPY .streamlit/config.toml /app/.streamlit/config.toml
 
 RUN useradd -m -u 1000 appuser && chown -R appuser /app
 USER appuser
