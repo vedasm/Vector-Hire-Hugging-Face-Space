@@ -15,6 +15,7 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 
 COPY app.py main.py ./
 COPY data/job_description.md ./data/
+COPY .streamlit/config.toml ./.streamlit/
 
 # Create user AFTER model download, then grant read access
 RUN useradd -m -u 1000 appuser && chown -R appuser /app
