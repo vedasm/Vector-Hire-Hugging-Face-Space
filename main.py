@@ -22,7 +22,7 @@ if Path(candidates_file).exists():
         for line in f:
             candidates.append(json.loads(line)) # pyright: ignore[reportUnknownMemberType]
 
-#ketwords to look for in job description and candidate profiles
+# keywords to look for in job description and candidate profiles
 
 SERVICE_COMPANIES = {
     "tcs",
